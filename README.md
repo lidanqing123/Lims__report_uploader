@@ -175,13 +175,16 @@ Example:
 ## FAQ
 
 ### 1 UnicodeEncodeError: 'charmap' codec can't encode characters in position 85-100
-    假如出现这个报错.可能是linux系统的stdout编码不对.可通过如下命令查看,和修改
-```
+![](https://raw.githubusercontent.com/lidanqing123/Lims__report_uploader/master/QQ%E5%9B%BE%E7%89%8720181226200832.png)
 
+假如出现这个报错.可能是linux系统的stdout编码不对.可通过如下命令查看.
 
-```
+![](https://raw.githubusercontent.com/lidanqing123/Lims__report_uploader/master/QQ%E5%9B%BE%E7%89%8720181226200951.png)
    
-
+用过`vi`命令将`~/.bashrc`文件加入下面一行信息.把环境变量LANG改为'zh_CN.UTF-8'
+```
+export LANG='zh_CN.UTF-8'
+```
 
 
 
