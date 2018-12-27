@@ -1,7 +1,7 @@
 # Lims__report_uploader’s documentation
 
 ## 简介
-*Lims_report_uploader*是用于将结题报告从天津或南京集群传到lims系统的工具.
+`Lims_report_uploader`是用于将结题报告从天津或南京集群传到lims系统的工具.
 
 ## 集群路径
 
@@ -16,9 +16,9 @@
 
 ## 使用方法
 
-* 首先,需要通过’init’命令初始化配置自己的lims账号和密码,此后,使用不需要再重新配置.
-* 使用’upload’命令来上传结题报告;
-* 如果不清楚SOP编号,可通过’search’命令查询可选SOP
+* 首先,需要通过`init`命令初始化配置自己的lims账号和密码,此后,使用不需要再重新配置.
+* 使用`upload`命令来上传结题报告;
+* 如果不清楚SOP编号,可通过`search`命令查询可选SOP
 
 ```
 $ /PUBLIC/software/MICRO/Anaconda/anaconda3/bin/python /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader -h
