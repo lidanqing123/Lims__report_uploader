@@ -142,7 +142,7 @@ Example:
 查看帮助信息可使用`-h`参数:
 ```
 $ /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader  upload -h
-usage: Lims_report_uploader.py upload [-h] -i file -s STAGECODE -r {Q,M,R} -n
+usage: Lims_report_uploader upload [-h] -i file -s STAGECODE -r {Q,M,R} -n
                                       int -d num --SOP SOP [-m REMARK]
 
 Description:
