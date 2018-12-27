@@ -133,8 +133,48 @@ Example:
 
 Example:
 ```
-    Lims_report_uploader.py upload -i P101SC18072239-01-B1-3.zip -s P101SC18072239-01-F002 -r Q -n 4 -d 2 --SOP SOPMC00039,SOPMC00040 -m "正常"
+    Lims_report_uploader upload -i P101SC18072239-01-B1-3.zip -s P101SC18072239-01-F002 -r Q -n 4 -d 2 --SOP SOPMC00039,SOPMC00040 -m "正常"
     
-    Lims_report_uploader.py upload --input P101SC18072239-01-B1-3.zip --stage_code P101SC18072239-01-F002 --report_type Q --sample_num 4 --total_data 2 --SOP SOPMC00039,SOPMC00040 --remark "正常"
+    Lims_report_uploader upload --input P101SC18072239-01-B1-3.zip --stage_code P101SC18072239-01-F002 --report_type Q --sample_num 4 --total_data 2 --SOP SOPMC00039,SOPMC00040 --remark "正常"
 
 ```
+
+查看帮助信息可使用`-h`参数:
+```
+$ /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader  upload -h
+usage: Lims_report_uploader.py upload [-h] -i file -s STAGECODE -r {Q,M,R} -n
+                                      int -d num --SOP SOP [-m REMARK]
+
+Description:
+    'upload'是本脚本最核心的功能,用于上传结题报告.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i file, --input file
+                        集群中报告文件的路径,'.zip', '.tar.gz', '.gz', '.rar'等类型的压缩文件
+  -s STAGECODE, --stage_code STAGECODE
+                        分期编号
+  -r {Q,M,R}, --report_type {Q,M,R}
+                        结题报告类型,例如:QC报告、mapping报告、结题报告
+  -n int, --sample_num int
+                        样本个数
+  -d num, --total_data num
+                        总数据量,以G为单位
+  --SOP SOP             SOP编号,多个SOP编号的话以英文字符逗号分开,like:"SOPMC00038,SOPMC00039".
+                        配置前可以用过'search'命令查询可选SOP.
+  -m REMARK, --remark REMARK
+                        备注信息.可为空
+
+Example:
+    Lims_report_uploader upload -i P101SC18072239-01-B1-3.zip -s P101SC18072239-01-F002 -r Q -n 4 -d 2 --SOP SOPMC00039,SOPMC00040 -m "正常"
+    
+    Lims_report_uploader upload --input P101SC18072239-01-B1-3.zip --stage_code P101SC18072239-01-F002 --report_type Q --sample_num 4 --total_data 2 --SOP SOPMC00039,SOPMC00040 --remark "正常"
+
+```
+
+
+
+
+
+
+
