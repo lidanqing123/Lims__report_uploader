@@ -1,7 +1,7 @@
-Lims__report_uploader’s documentation
+# Lims__report_uploader’s documentation
 
 ## 简介
-    *Lims_report_uploader*是用于将结题报告从天津或南京集群传到lims系统的工具.
+Lims_report_uploader是用于将结题报告从天津或南京集群传到lims系统的工具.
 
 ## 集群路径
 
