@@ -172,6 +172,16 @@ Example:
 
 ```
 
+## FAQ
+
+### 1 UnicodeEncodeError: 'charmap' codec can't encode characters in position 85-100
+    假如出现这个报错.可能是linux系统的stdout编码不对.可通过如下命令查看,和修改
+```
+
+
+```
+   
+
 
 
 
