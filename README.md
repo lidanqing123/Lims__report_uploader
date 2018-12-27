@@ -52,7 +52,7 @@ Example:
 
 
 ### 初始化lims账号信息
-初始化lims账号信息直接使用*init*命令
+初始化lims账号信息直接使用`init`命令
 ```
 /PUBLIC/software/MICRO/Anaconda/anaconda3/bin/python /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader init
 ```
