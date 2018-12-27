@@ -7,10 +7,14 @@
 
 天津集群
 ```
+/TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader -h
+或
 /PUBLIC/software/MICRO/Anaconda/anaconda3/bin/python /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader -h
 ```
 南京集群
 ```
+/NJPROJ2/MICRO/PROJ/lidanqing/lims_report_upload/Lims_report_uploader -h
+或
 /NJPROJ2/MICRO/share/software/Anaconda/anaconda3/bin/python  /NJPROJ2/MICRO/PROJ/lidanqing/lims_report_upload/Lims_report_uploader -h
 ```
 
@@ -21,7 +25,7 @@
 * 如果不清楚SOP编号,可通过`search`命令查询可选SOP
 
 ```
-$ /PUBLIC/software/MICRO/Anaconda/anaconda3/bin/python /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader -h
+$ /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader -h
 usage: Lims_report_uploader [-h] [-V] {init,search,upload} ...
 
 Description:
@@ -54,11 +58,11 @@ Example:
 ### 初始化lims账号信息
 初始化lims账号信息直接使用`init`命令
 ```
-/PUBLIC/software/MICRO/Anaconda/anaconda3/bin/python /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader init
+/TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader init
 ```
 查看帮助信息可加上`-h`参数:
 ```
-$ /PUBLIC/software/MICRO/Anaconda/anaconda3/bin/python /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader init -h 
+$ /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader init -h 
 usage: Lims_report_uploader init [-h]
 
 Description:
@@ -78,7 +82,7 @@ Example:
 通过项目分期编号,可以使用`search`命令查询可选的SOP
 
 ```
-$ /PUBLIC/software/MICRO/Anaconda/anaconda3/bin/python /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader search -s P101SC18072239-01-F002 
+$ /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader search -s P101SC18072239-01-F002 
 	SOP_code	SOP方法
 ############################################################
 	SOPMC00038	ANI分析（每株）
@@ -100,7 +104,7 @@ $ /PUBLIC/software/MICRO/Anaconda/anaconda3/bin/python /TJPROJ1/MICRO/lidanqing/
 ```
 查看帮助信息可使用`-h`参数:
 ```
-$ /PUBLIC/software/MICRO/Anaconda/anaconda3/bin/python /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader search -h
+$ /TJPROJ1/MICRO/lidanqing/lims_report_upload/Lims_report_uploader search -h
 usage: Lims_report_uploader search [-h] -s STAGECODE
 
 Description:
@@ -118,4 +122,19 @@ Example:
 
 
 ### 报告上传
+报告上传是此程序的主要功能. 需要配置的参数相对较多:
+  -i file, --input file                    集群中报告文件的路径,'.zip', '.tar.gz', '.tar', '.gz', '.rar'等类型的压缩文件
+  -s STAGECODE, --stage_code STAGECODE     项目分期编号
+  -r {Q,M,R}, --report_type {Q,M,R}        结题报告类型,例如:QC报告、mapping报告、结题报告.分别对应于{Q,M,R}.
+  -n int, --sample_num int                 样本个数
+  -d num, --total_data num                 总数据量
+  --SOP SOP                                SOP编号,多个SOP编号的话以英文字符逗号分开,like:"SOPMC00038,SOPMC00039".配置前可以用过'search'命令查询可选SOP.
+  -m REMARK, --remark REMARK               备注信息.可为空.
 
+Example:
+```
+    Lims_report_uploader.py upload -i P101SC18072239-01-B1-3.zip -s P101SC18072239-01-F002 -r Q -n 4 -d 2 --SOP SOPMC00039,SOPMC00040 -m "正常"
+    
+    Lims_report_uploader.py upload --input P101SC18072239-01-B1-3.zip --stage_code P101SC18072239-01-F002 --report_type Q --sample_num 4 --total_data 2 --SOP SOPMC00039,SOPMC00040 --remark "正常"
+
+```
