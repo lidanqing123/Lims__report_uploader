@@ -3,6 +3,10 @@
 ## 简介
 `Lims_report_uploader`是用于将结题报告从天津或南京集群传到lims系统的工具.
 
+## 版本
+![v1.0 ](https://raw.githubusercontent.com/lidanqing123/Lims__report_uploader/master/QQ%E5%9B%BE%E7%89%8720181226200951.png)
+   
+
 ## 集群路径
 
 天津集群
